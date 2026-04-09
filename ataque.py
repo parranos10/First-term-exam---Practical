@@ -32,7 +32,7 @@ with requests.Session() as session:
                     exit()
 
             except Exception as e:
-                print(f"Error en el intento {intentos}: {e}")
+                print(f"Error en el intento {intentos}: ")
                 time.sleep(1)
 
 print("No se encontró la contraseña")
