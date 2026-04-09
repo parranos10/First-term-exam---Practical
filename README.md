@@ -9,8 +9,7 @@ Este proyecto implementa una API de gestión de usuarios y un script de prueba d
 3. Ejecutar ataque: `python ataque.py`
 
 
-1. Implementar Hashing (Bcrypt) para no guardar claves en texto plano.
-2. Implementar Rate Limiting (máximo 5 intentos por minuto).
+
 
 
 aqui podemos evidenciar la cantidad de intentos, la contraseña, y el tiempo que tomo
