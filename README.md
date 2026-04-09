@@ -1,0 +1,2 @@
+# First-term-exam---Practical
+Actividad: CRUD de Usuarios + Prueba controlada de fuerza bruta contra tu propia API Objetivo
