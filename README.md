@@ -37,4 +37,6 @@ El archivo bruteForce.py realiza múltiples intentos de login probando diferente
 Ejecución:
 python bruteForce.py
 <img width="418" height="73" alt="image" src="https://github.com/user-attachments/assets/d282a2e4-b0aa-42a5-80ab-4c8c583c4230" />
+ejemplo cuando no encuentra la contraseña:
+<img width="523" height="120" alt="image" src="https://github.com/user-attachments/assets/5783fcc5-3ffc-4d68-b901-1e5f9fc8323c" />
 
