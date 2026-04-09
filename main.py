@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from sqlmodel import SQLModel
 from typing import Optional
-
+from fastapi import FastAPI, HTTPException
 app = FastAPI()
 
 
@@ -14,7 +14,7 @@ class User(SQLModel):
 
 
 db_users = [
-    User(id=1, username="admin", password="admin"),
+    User(id=1, username="admin", password="abd"),
     User(id=2, username="user", password="user"),
     User(id=3, username="guest", password="guest")
 ]
@@ -81,4 +81,4 @@ def login(user: User):
         if u.username == user.username and u.password == user.password:
             return {"message": "Login exitoso"}
 
-    return {"message": "Credenciales incorrectas"}
+    raise HTTPException(status_code=401, detail="Contraseña incorrecta")
